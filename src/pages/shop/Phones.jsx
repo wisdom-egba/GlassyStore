@@ -1,17 +1,14 @@
 import React, { useContext } from "react"
+import { PhonesBrand } from "../../product"
 import { ShopContext } from "../../context/shop-context"
-import { PRODUCTS } from "../../product"
-import "./shop.css"
-import { Phones } from "./Phones"
 
-const Shop = () => {
+export const Phones = () => {
   return (
-    <div className=" mt-12">
-      <h1>Gadgets</h1>
+    <div>
       <div className=" grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-[90%] lg:max-w-[70%] m-auto">
-        {PRODUCTS.map((products) => {
+        {PhonesBrand.map((product) => {
           // console.log(products);
-          const { id, productName, price, productImage } = products
+          const { id, productName, price, productImage } = product
           const { addToCart, cartItem } = useContext(ShopContext)
 
           const cartAmount = cartItem[id]
@@ -31,16 +28,13 @@ const Shop = () => {
                     alert("item added to cart")
                   }}
                 >
-                  Add to Cart {cartAmount > 0 && <>({cartAmount})</>}
+                  Add to Cart {cartAmount > 8 && <>({cartAmount})</>}
                 </button>
               </div>
             </div>
           )
         })}
       </div>
-      {/* <Phones /> */}
     </div>
   )
 }
-
-export default Shop
