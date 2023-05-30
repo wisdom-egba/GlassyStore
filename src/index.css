@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .heroBtn {
+    @apply border-[#242424] uppercase  rounded-md text-sm px-2 text-gray-500 transition-all border hover:border-[#F7AB0A] hover:text-[#F7AB0A] cursor-pointer outline-none;
+  }
+  .heroBtn2 {
+    @apply border-[#242424] bg-black  rounded-lg text-sm md:px-2 text-white transition-all border hover:border-gray-600 hover:text-black p-1 md:p-2 hover:bg-white cursor-pointer outline-none;
+  }
+}
